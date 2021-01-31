@@ -1,0 +1,60 @@
+# An udev rule to run when Digitakt is connected or disconnected.
+
+ACTION=="add", SUBSYSTEM=="sound", ATTRS{idVendor}=="1935", ATTRS{idProduct}=="102c", RUN+="/bin/systemctl start digitakt-jack-audio.service"
+ACTION=="remove", SUBSYSTEM=="sound", ATTRS{idVendor}=="1935", ATTRS{idProduct}=="102c", RUN+="/bin/systemctl stop digitakt-jack-audio.service"
+
+# UDEV  [89809.362051] add      /devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.2 (usb)
+# ACTION=add
+# DEVPATH=/devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.2
+# SUBSYSTEM=usb
+# DEVNAME=/dev/bus/usb/001/008
+# DEVTYPE=usb_device
+# PRODUCT=1935/102c/1
+# TYPE=239/2/1
+# BUSNUM=001
+# DEVNUM=008
+# SEQNUM=1776
+# USEC_INITIALIZED=89809355386
+# ID_VENDOR=Elektron_Music_Machines
+# ID_VENDOR_ENC=Elektron\x20Music\x20Machines
+# ID_VENDOR_ID=1935
+# ID_MODEL=Elektron_Digitakt
+# ID_MODEL_ENC=Elektron\x20Digitakt
+# ID_MODEL_ID=102c
+# ID_REVISION=0001
+# ID_SERIAL=Elektron_Music_Machines_Elektron_Digitakt_000000000001
+# ID_SERIAL_SHORT=000000000001
+# ID_BUS=usb
+# ID_USB_INTERFACES=:010120:010220:010100:010300:
+# DRIVER=usb
+# MAJOR=189
+# MINOR=7
+# 
+# UDEV  [89809.478454] add      /devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/controlC1 (sound)
+# ACTION=add
+# DEVPATH=/devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/controlC1
+# SUBSYSTEM=sound
+# DEVNAME=/dev/snd/controlC1
+# SEQNUM=1781
+# USEC_INITIALIZED=89809453009
+# ID_VENDOR=Elektron_Music_Machines
+# ID_VENDOR_ENC=Elektron\x20Music\x20Machines
+# ID_VENDOR_ID=1935
+# ID_MODEL=Elektron_Digitakt
+# ID_MODEL_ENC=Elektron\x20Digitakt
+# ID_MODEL_ID=102c
+# ID_REVISION=0001
+# ID_SERIAL=Elektron_Music_Machines_Elektron_Digitakt_000000000001
+# ID_SERIAL_SHORT=000000000001
+# ID_TYPE=audio
+# ID_BUS=usb
+# ID_USB_INTERFACES=:010120:010220:010100:010300:
+# ID_USB_INTERFACE_NUM=00
+# ID_USB_DRIVER=snd-usb-audio
+# ID_PATH=platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0
+# ID_PATH_TAG=platform-fd500000_pcie-pci-0000_01_00_0-usb-0_1_2_1_0
+# MAJOR=116
+# MINOR=32
+# DEVLINKS=/dev/snd/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0 /dev/snd/by-id/usb-Elektron_Music_Machines_Elektron_Digitakt_000000000001-00
+# TAGS=:uaccess:
+# 

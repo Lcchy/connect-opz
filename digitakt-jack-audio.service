@@ -1,0 +1,13 @@
+[Unit]
+After=sound.target
+Description=A systemd service for Digitakt usb to alsa
+
+[Service]
+Type=simple
+User=we
+Group=we
+LimitRTPRIO=95
+LimitMEMLOCK=infinity
+ExecStart=alsa_in -d hw:1 -r 48000
+ExecStop=killall -s 9 alsa_in
+RemainAfterExit=True
