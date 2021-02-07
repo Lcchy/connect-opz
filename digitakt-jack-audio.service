@@ -8,6 +8,7 @@ User=we
 Group=we
 LimitRTPRIO=95
 LimitMEMLOCK=infinity
-ExecStart=alsa_in -d hw:1 -r 48000 || alsa_in -d hw:2 -r 48000
+ExecStart=/usr/bin/alsa_in -d hw:1 -r 48000
 ExecStop=killall -s 9 alsa_in
 RemainAfterExit=True
+# || /usr/bin/alsa_in -d hw:2 -r 48000

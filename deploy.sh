@@ -5,3 +5,4 @@ sudo cp digitakt-jack-audio.service /etc/systemd/system/
 
 sudo systemctl daemon-reload
 sudo udevadm control --reload-rules && udevadm trigger
+
